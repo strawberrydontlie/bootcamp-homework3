@@ -36,6 +36,7 @@ function generatePassword () {
   return
  }
  
+ 
   const usersNumber = window.confirm("Do you wanna include number in your password?")
 
   const usersSymbols = window.confirm("Do you wanna include symbols in your password?")
@@ -86,15 +87,14 @@ function generatePassword () {
  }
   
 
-  const generatedPassword = ""
+  var generatedPassword = ""
 
-  for (const i = 0; i < passwordLength; i++){
+  for (var i = 0; i < passwordLength; i++) {
     var randomlist = getRandomItem(optionschoice) 
     var randomcharacter = getRandomItem(randomlist)
     generatedPassword += randomcharacter
 
   }
-  
   
   return generatedPassword
   
@@ -110,8 +110,8 @@ function generatePassword () {
 
 // Write password to the #password input
 function writePassword() {
-  const password = generatePassword();
-  const passwordText = document.querySelector("#password");
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
 
